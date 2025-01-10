@@ -1,8 +1,23 @@
+# Template Next.js + Redis PubSub
+This a template project to demonstrate how to use Next.js with Redis PubSub (ioredis) to create a Server-Sent Events (SSE) server which changes the UI every time a message is received.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, start the Redis server:
+
+```bash
+docker run --name redis -d -p 6379:6379 redis
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
@@ -13,6 +28,18 @@ pnpm dev
 # or
 bun dev
 ```
+
+Run a publisher demo with python:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install redis
+python3 publisher.py
+```
+
+Then send messages through the publisher and see the magic happening in the front end!
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
