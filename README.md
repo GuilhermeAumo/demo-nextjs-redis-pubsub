@@ -17,6 +17,11 @@ Install dependencies:
 npm install
 ```
 
+Setup .env.local by copying template.env.local:
+```bash
+cp template.env.local .env.local
+```
+
 Then run the development server:
 
 ```bash
